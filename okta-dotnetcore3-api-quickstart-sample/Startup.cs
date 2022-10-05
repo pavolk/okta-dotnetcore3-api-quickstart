@@ -50,6 +50,8 @@ namespace okta_dotnetcore3_api_quickstart_sample
             });
 
             services.AddControllers();
+
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +60,9 @@ namespace okta_dotnetcore3_api_quickstart_sample
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app
+                    .UseSwagger()
+                    .UseSwaggerUI();
             }
 
             app.UseHttpsRedirection();
